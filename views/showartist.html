@@ -1,0 +1,22 @@
+<ol class="breadcrumb">
+  <li><a ng-href="#/music">Artists</a></li>
+  <li class="active">{{ artist.label }}</li>
+</ol>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Album</th>
+      <th>Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="album in artist.albums">
+      <td>
+        <button type="button" class="btn btn-xs btn-default" ng-click="play(album.albumid)"><i class="fa fa-play"/></button>
+        <a ng-href="#/music/{{ artist.artistid }}/albums/{{ album.albumid }}">{{ album.label }}</a>
+      </td>
+      <td>{{ album.year }}</td>
+    </tr>
+  </tbody>
+</table>

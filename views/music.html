@@ -1,0 +1,20 @@
+<h2>Music</h2>
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Artist</th>
+      <th>Genre</th>
+    </tr>
+  </thead>
+  <tbody infinite-scroll="nextPage()" infinite-scroll-disabled="waiting">
+    <tr ng-repeat="artist in artists">
+      <td><a ng-href="#/music/{{ artist.artistid }}">{{ artist.artist }}</a></td>
+      <td>{{ artist.genre.join(', ') }}</td>
+    </tr>
+
+    <tr ng-show="waiting">
+      <td><i class="fa fa-spin fa-spinner"></td>
+      <td>Loading artists...</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,25 @@
+<ol class="breadcrumb">
+  <li><a ng-href="#/music">Music</a></li>
+  <li><a ng-href="#/music/{{ album.artistId }}">{{ album.artist }}</a></li>
+  <li class="active">{{ album.album }}</li>
+</ol>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Track</th>
+      <th>Song</th>
+      <th>Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="song in album.songs">
+      <td>
+        <button type="button" class="btn btn-xs btn-default" ng-click="play(song.songid, album.albumId)"><i class="fa fa-play"/></button>
+        {{ song.track }}
+      </td>
+      <td><strong>{{ song.title }}</strong></td>
+      <td>{{ song.minutes }}:{{ song.seconds < 10 ? '0' + song.seconds : song.seconds }}</td>
+    </tr>
+  </tbody>
+</table>

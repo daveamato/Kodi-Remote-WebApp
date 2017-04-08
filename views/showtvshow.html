@@ -1,0 +1,19 @@
+<ol class="breadcrumb">
+  <li><a ng-href="#/tvshows">TV Shows</a></li>
+  <li class="active">{{ tvshow.title }}</li>
+</ol>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Watched / Total episodes</th>
+    </tr>
+  </thread>
+  <tbody>
+    <tr ng-repeat="season in tvshow.seasons">
+      <td><a ng-href="#/tvshows/{{ tvshow.tvshowid }}/seasons/{{ season.season }}">{{ season.label }}</a></td>
+      <td>{{ season.watchedepisodes }} / {{ season.episode }}</td>
+    </tr>
+  </tbody>
+</table>
